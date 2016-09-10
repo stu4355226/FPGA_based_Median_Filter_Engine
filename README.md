@@ -45,7 +45,7 @@ FSM
 
 Result
 -------------
-For example: 4x3 matrix.
+Case1:4x3
 
 ![1](/images/1.jpg)     
 
@@ -53,6 +53,7 @@ For example: 4x3 matrix.
 ![2](/images/2.jpg)    
 The first line is the datain, and the second line is dataoout. The result is the same as we expect.     
 
+Case2: 8x8
 ![3](/images/3.jpg)     
 
 We get the result and check it that it’s right one：    
