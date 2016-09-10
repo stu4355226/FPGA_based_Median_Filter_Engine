@@ -1,0 +1,864 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.21 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.21 secs
+ 
+--> Reading design: medium_filter.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "medium_filter.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "medium_filter"
+Output Format                      : NGC
+Target Device                      : xc7z020-1-clg484
+
+---- Source Options
+Top Module Name                    : medium_filter
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "E:\med_filter\get_medium.vhd" into library work
+Parsing entity <get_medium>.
+Parsing architecture <RTL> of entity <get_medium>.
+Parsing VHDL file "E:\med_filter\get_pipe4_med.vhd" into library work
+Parsing entity <get_pipe4_med>.
+Parsing architecture <RTL> of entity <get_pipe4_med>.
+Parsing VHDL file "E:\med_filter\dram.vhd" into library work
+Parsing entity <dram>.
+Parsing architecture <RTL> of entity <dram>.
+Parsing VHDL file "E:\med_filter\medium_filter.vhd" into library work
+Parsing entity <medium_filter>.
+Parsing architecture <RTL> of entity <medium_filter>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <medium_filter> (architecture <RTL>) with generics from library <work>.
+WARNING:HDLCompiler:1127 - "E:\med_filter\medium_filter.vhd" Line 167: Assignment to rd_last_ram ignored, since the identifier is never used
+INFO:HDLCompiler:679 - "E:\med_filter\medium_filter.vhd" Line 253. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "E:\med_filter\medium_filter.vhd" Line 300. Case statement is complete. others clause is never selected
+
+Elaborating entity <dram> (architecture <RTL>) from library <work>.
+
+Elaborating entity <get_pipe4_med> (architecture <RTL>) from library <work>.
+
+Elaborating entity <get_medium> (architecture <RTL>) from library <work>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <medium_filter>.
+    Related source file is "E:\med_filter\medium_filter.vhd".
+        ROW_WIDTH = 4
+        COL_WIDTH = 3
+        COL_DEPTH = 10
+        ROW_DEPTH = 10
+INFO:Xst:3210 - "E:\med_filter\medium_filter.vhd" line 351: Output port <doa> of the instance <dram_inst0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\med_filter\medium_filter.vhd" line 367: Output port <doa> of the instance <dram_inst1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\med_filter\medium_filter.vhd" line 381: Output port <doa> of the instance <dram_inst2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\med_filter\medium_filter.vhd" line 395: Output port <doa> of the instance <dram_inst3> is unconnected or connected to loadless signal.
+    Found 4-bit register for signal <rd_ram_r>.
+    Found 4-bit register for signal <wr_ram>.
+    Found 4-bit register for signal <rd_ram>.
+    Found 4-bit register for signal <new_data>.
+    Found 8-bit register for signal <data1_r3>.
+    Found 8-bit register for signal <data1_r2>.
+    Found 8-bit register for signal <data1_r1>.
+    Found 8-bit register for signal <data2_r3>.
+    Found 8-bit register for signal <data2_r2>.
+    Found 8-bit register for signal <data2_r1>.
+    Found 8-bit register for signal <dataout>.
+    Found 3-bit register for signal <cur_state>.
+    Found 10-bit register for signal <wr_ram_addr>.
+    Found 10-bit register for signal <rd_ram_addr>.
+    Found 10-bit register for signal <wr_col_cnt>.
+    Found 1-bit register for signal <ram_data_vld>.
+    Found 1-bit register for signal <rd_line_end_r3>.
+    Found 1-bit register for signal <rd_line_end_r2>.
+    Found 1-bit register for signal <rd_line_end_r1>.
+    Found 1-bit register for signal <rd_line_start_r3>.
+    Found 1-bit register for signal <rd_line_start_r2>.
+    Found 1-bit register for signal <rd_line_start_r1>.
+    Found 1-bit register for signal <rd_last_line_r3>.
+    Found 1-bit register for signal <rd_last_line_r2>.
+    Found 1-bit register for signal <rd_last_line_r1>.
+    Found 1-bit register for signal <ram_data_vld_r3>.
+    Found 1-bit register for signal <ram_data_vld_r2>.
+    Found 1-bit register for signal <ram_data_vld_r1>.
+    Found 1-bit register for signal <cal_done_r>.
+    Found 1-bit register for signal <write_row_done>.
+    Found 1-bit register for signal <write_col_done>.
+    Found 1-bit register for signal <rd_last_line>.
+    Found 1-bit register for signal <cal_done>.
+    Found 1-bit register for signal <rd_line_start>.
+    Found 1-bit register for signal <rd_line_end>.
+    Found 1-bit register for signal <dataout_vld>.
+    Found 1-bit register for signal <start_r>.
+    Found finite state machine <FSM_0> for signal <cur_state>.
+    -----------------------------------------------------------------------
+    | States             | 6                                              |
+    | Transitions        | 17                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 7                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rstn (negative)                                |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | idle                                           |
+    | Power Up State     | idle                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 10-bit adder for signal <wr_ram_addr[9]_GND_5_o_add_36_OUT> created at line 244.
+    Found 10-bit adder for signal <wr_col_cnt[9]_GND_5_o_add_49_OUT> created at line 273.
+    Found 10-bit adder for signal <rd_ram_addr[9]_GND_5_o_add_55_OUT> created at line 292.
+    Found 4x4-bit Read Only RAM for signal <rd_ram_addr[1]_PWR_5_o_wide_mux_57_OUT>
+    Found 4-bit 6-to-1 multiplexer for signal <nxt_state[2]_X_5_o_wide_mux_28_OUT> created at line 174.
+    Found 10-bit comparator greater for signal <n0056> created at line 247
+    Found 10-bit comparator greater for signal <rd_ram_addr[9]_GND_5_o_LessThan_57_o> created at line 294
+    Summary:
+	inferred   1 RAM(s).
+	inferred   3 Adder/Subtractor(s).
+	inferred 124 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred  63 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <medium_filter> synthesized.
+
+Synthesizing Unit <dram>.
+    Related source file is "E:\med_filter\dram.vhd".
+    Found 10-bit register for signal <read_addrb>.
+    Found 10-bit register for signal <read_addra>.
+    Found 512x8-bit dual-port RAM <Mram_ram> for signal <ram>.
+    Summary:
+	inferred   2 RAM(s).
+	inferred  20 D-type flip-flop(s).
+Unit <dram> synthesized.
+
+Synthesizing Unit <get_pipe4_med>.
+    Related source file is "E:\med_filter\get_pipe4_med.vhd".
+    Summary:
+	inferred   4 Multiplexer(s).
+Unit <get_pipe4_med> synthesized.
+
+Synthesizing Unit <get_medium>.
+    Related source file is "E:\med_filter\get_medium.vhd".
+    Found 8-bit register for signal <max_min>.
+    Found 8-bit register for signal <med_med>.
+    Found 8-bit register for signal <med_max>.
+    Found 8-bit register for signal <med_min>.
+    Found 8-bit register for signal <min_max>.
+    Found 8-bit register for signal <med_data>.
+    Found 2-bit register for signal <cur_state>.
+    Found 1-bit register for signal <data_vld_r>.
+    Found 1-bit register for signal <new_data_r>.
+    Found 1-bit register for signal <med_data_vld>.
+    Found finite state machine <FSM_1> for signal <cur_state>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 8                                              |
+    | Inputs             | 4                                              |
+    | Outputs            | 3                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rstn (negative)                                |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | s0                                             |
+    | Power Up State     | s0                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 8-bit 3-to-1 multiplexer for signal <nxt_state[1]_X_8_o_wide_mux_167_OUT> created at line 70.
+    Found 8-bit 3-to-1 multiplexer for signal <nxt_state[1]_X_8_o_wide_mux_170_OUT> created at line 70.
+    Found 8-bit comparator lessequal for signal <n0011> created at line 73
+    Found 8-bit comparator lessequal for signal <n0013> created at line 73
+    Found 8-bit comparator lessequal for signal <n0018> created at line 85
+    Found 8-bit comparator lessequal for signal <n0020> created at line 85
+    Found 8-bit comparator greater for signal <n0036> created at line 118
+    Found 8-bit comparator greater for signal <n0038> created at line 118
+    Found 8-bit comparator greater for signal <data01[7]_max_min[7]_LessThan_36_o> created at line 119
+    Found 8-bit comparator lessequal for signal <n0046> created at line 148
+    Found 8-bit comparator greater for signal <n0048> created at line 148
+    Found 8-bit comparator greater for signal <data11[7]_max_min[7]_LessThan_56_o> created at line 149
+    Found 8-bit comparator greater for signal <min_max[7]_data21[7]_LessThan_63_o> created at line 162
+    Found 8-bit comparator lessequal for signal <med_max[7]_data21[7]_LessThan_65_o> created at line 166
+    Found 8-bit comparator lessequal for signal <data21[7]_med_min[7]_LessThan_67_o> created at line 170
+    Found 8-bit comparator lessequal for signal <med_max[7]_data01[7]_LessThan_75_o> created at line 180
+    Found 8-bit comparator lessequal for signal <data01[7]_med_min[7]_LessThan_77_o> created at line 184
+    Found 8-bit comparator greater for signal <min_max[7]_data11[7]_LessThan_79_o> created at line 188
+    Found 8-bit comparator lessequal for signal <med_max[7]_data11[7]_LessThan_81_o> created at line 192
+    Found 8-bit comparator lessequal for signal <data11[7]_med_min[7]_LessThan_83_o> created at line 196
+    Found 8-bit comparator greater for signal <min_max[7]_data01[7]_LessThan_85_o> created at line 200
+    Found 8-bit comparator greater for signal <data21[7]_max_min[7]_LessThan_90_o> created at line 205
+    Found 8-bit comparator lessequal for signal <n0091> created at line 212
+    Found 8-bit comparator lessequal for signal <n0093> created at line 212
+    Found 8-bit comparator greater for signal <data02[7]_max_min[7]_LessThan_106_o> created at line 213
+    Found 8-bit comparator lessequal for signal <n0100> created at line 242
+    Found 8-bit comparator lessequal for signal <n0102> created at line 242
+    Found 8-bit comparator greater for signal <data12[7]_max_min[7]_LessThan_125_o> created at line 243
+    Found 8-bit comparator greater for signal <min_max[7]_data22[7]_LessThan_132_o> created at line 256
+    Found 8-bit comparator greater for signal <med_max[7]_data22[7]_LessThan_134_o> created at line 260
+    Found 8-bit comparator greater for signal <data22[7]_med_min[7]_LessThan_135_o> created at line 262
+    Found 8-bit comparator greater for signal <data22[7]_max_min[7]_LessThan_142_o> created at line 273
+    Found 8-bit comparator greater for signal <med_max[7]_data02[7]_LessThan_145_o> created at line 278
+    Found 8-bit comparator greater for signal <data02[7]_med_min[7]_LessThan_146_o> created at line 280
+    Found 8-bit comparator greater for signal <min_max[7]_data12[7]_LessThan_149_o> created at line 286
+    Found 8-bit comparator greater for signal <med_max[7]_data12[7]_LessThan_151_o> created at line 290
+    Found 8-bit comparator greater for signal <data12[7]_med_min[7]_LessThan_152_o> created at line 292
+    Found 8-bit comparator greater for signal <min_max[7]_data02[7]_LessThan_155_o> created at line 298
+    Found 8-bit comparator greater for signal <med_med[7]_max_min[7]_LessThan_179_o> created at line 315
+    Found 8-bit comparator greater for signal <max_min[7]_med_med[7]_LessThan_181_o> created at line 316
+    Found 8-bit comparator greater for signal <med_med[7]_min_max[7]_LessThan_183_o> created at line 318
+    Found 8-bit comparator greater for signal <min_max[7]_max_min[7]_LessThan_184_o> created at line 318
+    Found 8-bit comparator greater for signal <min_max[7]_med_med[7]_LessThan_185_o> created at line 319
+    Found 8-bit comparator greater for signal <max_min[7]_min_max[7]_LessThan_186_o> created at line 319
+    Summary:
+	inferred  51 D-type flip-flop(s).
+	inferred  42 Comparator(s).
+	inferred  72 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <get_medium> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 9
+ 4x4-bit single-port Read Only RAM                     : 1
+ 512x8-bit dual-port RAM                               : 8
+# Adders/Subtractors                                   : 3
+ 10-bit adder                                          : 3
+# Registers                                            : 80
+ 1-bit register                                        : 34
+ 10-bit register                                       : 11
+ 4-bit register                                        : 4
+ 8-bit register                                        : 31
+# Comparators                                          : 170
+ 10-bit comparator greater                             : 2
+ 8-bit comparator greater                              : 108
+ 8-bit comparator lessequal                            : 60
+# Multiplexers                                         : 355
+ 1-bit 2-to-1 multiplexer                              : 9
+ 10-bit 2-to-1 multiplexer                             : 4
+ 4-bit 2-to-1 multiplexer                              : 16
+ 4-bit 6-to-1 multiplexer                              : 1
+ 8-bit 2-to-1 multiplexer                              : 317
+ 8-bit 3-to-1 multiplexer                              : 8
+# FSMs                                                 : 5
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:2677 - Node <read_addrb_9> of sequential type is unconnected in block <dram_inst0>.
+WARNING:Xst:2677 - Node <read_addrb_9> of sequential type is unconnected in block <dram_inst1>.
+WARNING:Xst:2677 - Node <read_addrb_9> of sequential type is unconnected in block <dram_inst2>.
+WARNING:Xst:2677 - Node <read_addrb_9> of sequential type is unconnected in block <dram_inst3>.
+
+Synthesizing (advanced) Unit <dram>.
+INFO:Xst:3227 - The RAM <Mram_ram>, combined with <Mram_ram1>, will be implemented as a BLOCK RAM, absorbing the following register(s): <read_addra> <read_addrb>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 512-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     enA            | connected to signal <ena>           | high     |
+    |     weA            | connected to signal <wea>           | high     |
+    |     addrA          | connected to signal <addra<8:0>>    |          |
+    |     diA            | connected to signal <dia>           |          |
+    |     doA            | connected to signal <doa>           |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 512-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <clk>           | rise     |
+    |     enB            | connected to signal <enb>           | high     |
+    |     addrB          | connected to signal <addrb<8:0>>    |          |
+    |     doB            | connected to signal <dob>           |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <dram> synthesized (advanced).
+
+Synthesizing (advanced) Unit <medium_filter>.
+The following registers are absorbed into counter <wr_ram_addr>: 1 register on signal <wr_ram_addr>.
+The following registers are absorbed into counter <wr_col_cnt>: 1 register on signal <wr_col_cnt>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_rd_ram_addr[1]_PWR_5_o_wide_mux_57_OUT> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 4-word x 4-bit                      |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <rd_ram_addr<1:0>> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <medium_filter> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 5
+ 4x4-bit single-port distributed Read Only RAM         : 1
+ 512x8-bit dual-port block RAM                         : 4
+# Adders/Subtractors                                   : 1
+ 10-bit adder                                          : 1
+# Counters                                             : 2
+ 10-bit up counter                                     : 2
+# Registers                                            : 308
+ Flip-Flops                                            : 308
+# Comparators                                          : 170
+ 10-bit comparator greater                             : 2
+ 8-bit comparator greater                              : 108
+ 8-bit comparator lessequal                            : 60
+# Multiplexers                                         : 354
+ 1-bit 2-to-1 multiplexer                              : 9
+ 10-bit 2-to-1 multiplexer                             : 3
+ 4-bit 2-to-1 multiplexer                              : 16
+ 4-bit 6-to-1 multiplexer                              : 1
+ 8-bit 2-to-1 multiplexer                              : 317
+ 8-bit 3-to-1 multiplexer                              : 8
+# FSMs                                                 : 5
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <get_medium_inst3/data_vld_r> in Unit <get_pipe4_med> is equivalent to the following 3 FFs/Latches, which will be removed : <get_medium_inst2/data_vld_r> <get_medium_inst1/data_vld_r> <get_medium_inst0/data_vld_r> 
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <FSM_0> on signal <cur_state[1:3]> with user encoding.
+----------------------
+ State    | Encoding
+----------------------
+ idle     | 000
+ wram0    | 001
+ wram1    | 010
+ wram2    | 011
+ wram3    | 100
+ wait_end | 101
+----------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <get_pipe4_med_inst/FSM_1> on signal <cur_state[1:2]> with user encoding.
+Optimizing FSM <get_pipe4_med_inst/FSM_1> on signal <cur_state[1:2]> with user encoding.
+Optimizing FSM <get_pipe4_med_inst/FSM_1> on signal <cur_state[1:2]> with user encoding.
+Optimizing FSM <get_pipe4_med_inst/FSM_1> on signal <cur_state[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ s0    | 00
+ s1    | 01
+ s2    | 10
+-------------------
+
+Optimizing unit <medium_filter> ...
+
+Optimizing unit <get_pipe4_med> ...
+WARNING:Xst:1710 - FF/Latch <get_pipe4_med_inst/get_medium_inst2/med_min_6> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/med_min_7> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/min_max_0> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/min_max_1> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/min_max_2> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/min_max_3> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/min_max_4> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/min_max_5> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/min_max_6> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/min_max_7> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/med_med_0> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/med_med_1> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/med_med_2> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/med_med_3> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/med_med_4> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/med_med_5> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/med_med_6> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/med_med_7> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/max_min_0> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/max_min_2> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/max_min_3> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/max_min_4> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/max_min_5> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/max_min_6> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/max_min_7> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/med_max_0> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/med_max_1> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/med_max_2> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/med_max_3> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/med_max_4> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/med_max_5> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/med_max_6> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/med_max_7> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/med_min_0> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/med_min_1> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/med_min_2> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/med_min_3> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/med_min_4> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/med_min_5> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/med_min_5> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/med_min_6> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/med_min_7> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/min_max_0> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/min_max_1> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/min_max_2> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/min_max_3> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/min_max_4> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/min_max_5> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/min_max_6> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/min_max_7> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/med_med_0> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/med_med_1> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/med_med_2> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/med_med_3> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/med_med_4> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/med_med_5> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/med_med_6> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/med_med_7> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/max_min_1> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/max_min_2> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/max_min_3> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/max_min_4> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/max_min_5> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/max_min_6> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/max_min_7> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/med_max_0> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/med_max_1> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/med_max_2> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/med_max_3> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/med_max_4> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/med_max_5> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/med_max_6> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/med_max_7> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/med_min_0> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/med_min_1> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/med_min_2> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/med_min_3> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/med_min_4> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/max_min_6> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/max_min_7> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/med_max_0> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/med_max_1> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/med_max_2> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/med_max_3> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/med_max_4> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wr_col_cnt_2> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wr_ram_addr_9> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wr_ram_addr_8> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wr_ram_addr_7> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wr_ram_addr_6> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wr_ram_addr_5> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wr_ram_addr_4> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wr_ram_addr_3> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wr_ram_addr_2> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <new_data_3> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/med_max_5> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wr_col_cnt_5> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wr_col_cnt_6> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wr_col_cnt_7> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wr_col_cnt_8> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wr_col_cnt_9> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/cur_state_FSM_FFd1> has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/cur_state_FSM_FFd2> has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/cur_state_FSM_FFd1> has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/cur_state_FSM_FFd2> has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/cur_state_FSM_FFd1> has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/cur_state_FSM_FFd2> has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wr_col_cnt_4> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wr_col_cnt_3> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/max_min_0> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/max_min_1> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/max_min_2> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/max_min_3> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/max_min_4> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/max_min_5> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/max_min_1> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/max_min_0> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <new_data_1> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <new_data_2> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/med_med_7> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/med_med_6> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/med_med_5> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/med_med_4> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/med_med_3> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/med_med_2> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/med_med_1> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/med_med_0> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/min_max_7> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/min_max_6> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/min_max_5> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/med_max_6> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/med_max_7> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/med_min_0> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/med_min_1> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/med_min_2> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/med_min_3> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/med_min_4> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/med_min_5> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/med_min_6> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/med_min_7> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/min_max_0> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/min_max_1> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/min_max_2> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/min_max_3> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/min_max_4> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/med_data_0> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/med_data_1> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/med_data_2> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/med_data_3> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/med_data_4> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/med_data_5> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/med_data_6> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/med_data_7> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/med_data_vld> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/new_data_r> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/med_data_7> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/med_data_6> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/med_data_5> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/med_data_4> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/med_data_3> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/med_data_2> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/med_data_1> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/med_data_0> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/med_data_0> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/med_data_1> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/med_data_2> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/med_data_3> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/med_data_4> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/med_data_5> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/med_data_6> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst2/med_data_7> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/new_data_r> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst3/med_data_vld> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/med_data_vld> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <get_pipe4_med_inst/get_medium_inst1/new_data_r> (without init value) has a constant value of 0 in block <medium_filter>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+INFO:Xst:2261 - The FF/Latch <ram_data_vld_r1> in Unit <medium_filter> is equivalent to the following FF/Latch, which will be removed : <get_pipe4_med_inst/get_medium_inst3/data_vld_r> 
+Found area constraint ratio of 100 (+ 5) on block medium_filter, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 160
+ Flip-Flops                                            : 160
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : medium_filter.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 524
+#      GND                         : 1
+#      INV                         : 2
+#      LUT1                        : 2
+#      LUT2                        : 15
+#      LUT3                        : 47
+#      LUT4                        : 35
+#      LUT5                        : 91
+#      LUT6                        : 304
+#      MUXCY                       : 2
+#      MUXF7                       : 20
+#      VCC                         : 1
+#      XORCY                       : 4
+# FlipFlops/Latches                : 160
+#      FDC                         : 124
+#      FDCE                        : 36
+# RAMS                             : 4
+#      RAMB18E1                    : 4
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 22
+#      IBUF                        : 11
+#      OBUF                        : 11
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7z020clg484-1 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             160  out of  106400     0%  
+ Number of Slice LUTs:                  496  out of  53200     0%  
+    Number used as Logic:               496  out of  53200     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    541
+   Number with an unused Flip Flop:     381  out of    541    70%  
+   Number with an unused LUT:            45  out of    541     8%  
+   Number of fully used LUT-FF pairs:   115  out of    541    21%  
+   Number of unique control sets:        12
+
+IO Utilization: 
+ Number of IOs:                          23
+ Number of bonded IOBs:                  23  out of    200    11%  
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:                2  out of    140     1%  
+    Number using Block RAM only:          2
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 164   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+--------------------------+-------+
+Control Signal                     | Buffer(FF name)          | Load  |
+-----------------------------------+--------------------------+-------+
+ram0_wren(ram0_wren1:O)            | NONE(dram_inst0/Mram_ram)| 2     |
+ram1_wren(ram1_wren1:O)            | NONE(dram_inst1/Mram_ram)| 2     |
+ram2_wren(ram2_wren1:O)            | NONE(dram_inst2/Mram_ram)| 2     |
+ram3_wren(ram3_wren1:O)            | NONE(dram_inst3/Mram_ram)| 2     |
+-----------------------------------+--------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -1
+
+   Minimum period: 7.671ns (Maximum Frequency: 130.361MHz)
+   Minimum input arrival time before clock: 2.576ns
+   Maximum output required time after clock: 1.435ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 7.671ns (frequency: 130.361MHz)
+  Total number of paths / destination ports: 498762 / 251
+-------------------------------------------------------------------------
+Delay:               7.671ns (Levels of Logic = 9)
+  Source:            dram_inst0/Mram_ram (RAM)
+  Destination:       get_pipe4_med_inst/get_medium_inst0/med_min_7 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: dram_inst0/Mram_ram to get_pipe4_med_inst/get_medium_inst0/med_min_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     RAMB18E1:CLKARDCLK->DOBDO6    4   2.454   0.622  dram_inst0/Mram_ram (ram0_data<6>)
+     LUT6:I3->O            3   0.053   0.427  Mmux_data171 (Mmux_data17)
+     LUT6:I5->O            2   0.053   0.641  Mmux_data172_1 (Mmux_data172)
+     LUT4:I0->O            2   0.053   0.608  get_pipe4_med_inst/get_medium_inst0/data00[7]_data10[7]_LessThan_12_o221 (get_pipe4_med_inst/get_medium_inst0/data00[7]_data10[7]_LessThan_12_o22)
+     LUT5:I2->O            2   0.053   0.419  get_pipe4_med_inst/get_medium_inst0/n00362_SW0 (N38)
+     LUT6:I5->O           20   0.053   0.538  get_pipe4_med_inst/get_medium_inst0/n00362 (get_pipe4_med_inst/get_medium_inst0/n0036)
+     LUT5:I4->O            1   0.053   0.602  get_pipe4_med_inst/get_medium_inst0/_n0358_inv8 (get_pipe4_med_inst/get_medium_inst0/_n0358_inv8)
+     LUT6:I3->O            1   0.053   0.413  get_pipe4_med_inst/get_medium_inst0/_n0358_inv9 (get_pipe4_med_inst/get_medium_inst0/_n0358_inv9)
+     LUT6:I5->O            8   0.053   0.459  get_pipe4_med_inst/get_medium_inst0/_n0358_inv10 (get_pipe4_med_inst/get_medium_inst0/_n0358_inv)
+     LUT3:I2->O            1   0.053   0.000  get_pipe4_med_inst/get_medium_inst0/med_min_0_rstpot (get_pipe4_med_inst/get_medium_inst0/med_min_0_rstpot)
+     FDC:D                     0.011          get_pipe4_med_inst/get_medium_inst0/med_min_0
+    ----------------------------------------
+    Total                      7.671ns (2.942ns logic, 4.729ns route)
+                                       (38.4% logic, 61.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 250 / 248
+-------------------------------------------------------------------------
+Offset:              2.576ns (Levels of Logic = 4)
+  Source:            datain_vld (PAD)
+  Destination:       rd_ram_addr_4 (FF)
+  Destination Clock: clk rising
+
+  Data Path: datain_vld to rd_ram_addr_4
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            12   0.000   0.797  datain_vld_IBUF (datain_vld_IBUF)
+     LUT5:I0->O           18   0.053   0.837  datain_vld_wr_ram[3]_AND_6_o1 (datain_vld_wr_ram[3]_AND_6_o)
+     LUT5:I0->O            6   0.053   0.772  Mmux_rd_ram_addr[9]_rd_ram_addr[9]_mux_64_OUT111 (Mmux_rd_ram_addr[9]_rd_ram_addr[9]_mux_64_OUT11)
+     LUT6:I0->O            1   0.053   0.000  Mmux_rd_ram_addr[9]_rd_ram_addr[9]_mux_64_OUT51 (rd_ram_addr[9]_rd_ram_addr[9]_mux_64_OUT<4>)
+     FDCE:D                    0.011          rd_ram_addr_4
+    ----------------------------------------
+    Total                      2.576ns (0.170ns logic, 2.406ns route)
+                                       (6.6% logic, 93.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 15 / 11
+-------------------------------------------------------------------------
+Offset:              1.435ns (Levels of Logic = 2)
+  Source:            wr_ram_2 (FF)
+  Destination:       ready (PAD)
+  Source Clock:      clk rising
+
+  Data Path: wr_ram_2 to ready
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             11   0.282   0.701  wr_ram_2 (wr_ram_2)
+     LUT4:I0->O            1   0.053   0.399  ready<0>1 (ready_OBUF)
+     OBUF:I->O                 0.000          ready_OBUF (ready)
+    ----------------------------------------
+    Total                      1.435ns (0.335ns logic, 1.100ns route)
+                                       (23.3% logic, 76.7% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    7.671|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 45.00 secs
+Total CPU time to Xst completion: 44.59 secs
+ 
+--> 
+
+Total memory usage is 491560 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  180 (   0 filtered)
+Number of infos    :    8 (   0 filtered)
+

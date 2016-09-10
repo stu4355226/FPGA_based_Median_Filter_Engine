@@ -1,0 +1,29 @@
+Command line:
+   tb_med_filter_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  50665
+
+Wed May 06 11:36:25 2015
+
+
+ Elaboration Time: 0.0936 sec
+
+ Current Memory Usage: 698.941 Meg
+
+ Total Signals          : 245
+ Total Nets             : 16938
+ Total Signal Drivers   : 125
+ Total Blocks           : 14
+ Total Primitive Blocks : 11
+ Total Processes        : 53
+ Total Traceable Variables  : 14
+ Total Scalar Nets and Variables : 17320
+Total Line Count : 933
+
+ Total Simulation Time: 0.343202 sec
+
+ Current Memory Usage: 1013.51 Meg
+
+Wed May 06 11:37:59 2015
+

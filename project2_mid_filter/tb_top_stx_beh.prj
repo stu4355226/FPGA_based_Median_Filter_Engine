@@ -1,0 +1,7 @@
+vhdl isim_temp "ipcore_dir/bmp_rom.vhd"
+vhdl isim_temp "get_medium.vhd"
+vhdl isim_temp "get_pipe4_med.vhd"
+vhdl isim_temp "dram.vhd"
+vhdl isim_temp "medium_filter.vhd"
+vhdl isim_temp "top_med_filter.vhd"
+vhdl isim_temp "tb_top.vhd"

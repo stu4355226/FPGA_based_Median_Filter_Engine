@@ -1,0 +1,5 @@
+vhdl isim_temp "get_medium.vhd"
+vhdl isim_temp "get_pipe4_med.vhd"
+vhdl isim_temp "dram.vhd"
+vhdl isim_temp "medium_filter.vhd"
+vhdl isim_temp "tb_med_filter.vhd"

@@ -1,0 +1,32 @@
+xst -intstyle ise -ifn "E:/med_filter/top_med_filter.xst" -ofn "E:/med_filter/top_med_filter.syr" 
+xst -intstyle ise -ifn "E:/med_filter/top_med_filter.xst" -ofn "E:/med_filter/top_med_filter.syr" 
+xst -intstyle ise -ifn "E:/med_filter/top_med_filter.xst" -ofn "E:/med_filter/top_med_filter.syr" 
+xst -intstyle ise -ifn "E:/med_filter/top_med_filter.xst" -ofn "E:/med_filter/top_med_filter.syr" 
+xst -intstyle ise -ifn "E:/med_filter/top_med_filter.xst" -ofn "E:/med_filter/top_med_filter.syr" 
+xst -intstyle ise -ifn "E:/med_filter/top_med_filter.xst" -ofn "E:/med_filter/top_med_filter.syr" 
+xst -intstyle ise -ifn "E:/med_filter/top_med_filter.xst" -ofn "E:/med_filter/top_med_filter.syr" 
+xst -intstyle ise -ifn "E:/med_filter/top_med_filter.xst" -ofn "E:/med_filter/top_med_filter.syr" 
+xst -intstyle ise -ifn "E:/med_filter/top_med_filter.xst" -ofn "E:/med_filter/top_med_filter.syr" 
+xst -intstyle ise -ifn "E:/med_filter/top_med_filter.xst" -ofn "E:/med_filter/top_med_filter.syr" 
+xst -intstyle ise -ifn "E:/med_filter/top_med_filter.xst" -ofn "E:/med_filter/top_med_filter.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc user_con.ucf -p xc7z020-clg484-1 top_med_filter.ngc top_med_filter.ngd  
+map -intstyle ise -p xc7z020-clg484-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o top_med_filter_map.ncd top_med_filter.ngd top_med_filter.pcf 
+par -w -intstyle ise -ol high -mt off top_med_filter_map.ncd top_med_filter.ncd top_med_filter.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml top_med_filter.twx top_med_filter.ncd -o top_med_filter.twr top_med_filter.pcf -ucf user_con.ucf 
+bitgen -intstyle ise -f top_med_filter.ut top_med_filter.ncd 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc user_con.ucf -p xc7z020-clg484-1 top_med_filter.ngc top_med_filter.ngd  
+map -intstyle ise -p xc7z020-clg484-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o top_med_filter_map.ncd top_med_filter.ngd top_med_filter.pcf 
+par -w -intstyle ise -ol high -mt off top_med_filter_map.ncd top_med_filter.ncd top_med_filter.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml top_med_filter.twx top_med_filter.ncd -o top_med_filter.twr top_med_filter.pcf -ucf user_con.ucf 
+bitgen -intstyle ise -f top_med_filter.ut top_med_filter.ncd 
+xst -intstyle ise -ifn "E:/med_filter/top_med_filter.xst" -ofn "E:/med_filter/top_med_filter.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc user_con.ucf -p xc7z020-clg484-1 top_med_filter.ngc top_med_filter.ngd  
+map -intstyle ise -p xc7z020-clg484-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o top_med_filter_map.ncd top_med_filter.ngd top_med_filter.pcf 
+par -w -intstyle ise -ol high -mt off top_med_filter_map.ncd top_med_filter.ncd top_med_filter.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml top_med_filter.twx top_med_filter.ncd -o top_med_filter.twr top_med_filter.pcf -ucf user_con.ucf 
+bitgen -intstyle ise -f top_med_filter.ut top_med_filter.ncd 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc user_con.ucf -p xc7z020-clg484-1 top_med_filter.ngc top_med_filter.ngd  
+map -intstyle ise -p xc7z020-clg484-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o top_med_filter_map.ncd top_med_filter.ngd top_med_filter.pcf 
+par -w -intstyle ise -ol high -mt off top_med_filter_map.ncd top_med_filter.ncd top_med_filter.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml top_med_filter.twx top_med_filter.ncd -o top_med_filter.twr top_med_filter.pcf -ucf user_con.ucf 
+bitgen -intstyle ise -f top_med_filter.ut top_med_filter.ncd 

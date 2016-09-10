@@ -1,0 +1,6 @@
+work	"dram.vhd"
+work	"get_medium.vhd"
+work	"get_pipe4_med.vhd"
+work	"ipcore_dir/bmp_rom1.vhd"
+work	"medium_filter.vhd"
+work	"top_med_filter.vhd"

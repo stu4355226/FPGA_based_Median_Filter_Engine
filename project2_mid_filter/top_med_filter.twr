@@ -1,0 +1,730 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 1
+-n 3 -fastpaths -xml top_med_filter.twx top_med_filter.ncd -o
+top_med_filter.twr top_med_filter.pcf -ucf user_con.ucf
+
+Design file:              top_med_filter.ncd
+Physical constraint file: top_med_filter.pcf
+Device,package,speed:     xc7z020,clg484,C,-1 (PRODUCTION 1.08 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: TS_Clk0 = PERIOD TIMEGRP "clk" 10 ns HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 0 paths analyzed, 0 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 component switching limit errors)
+ Minimum period is   4.000ns.
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_Clk0 = PERIOD TIMEGRP "clk" 10 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 6.000ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 10.000ns
+  Low pulse: 5.000ns
+  Low pulse limit: 2.000ns (Tmmcmpw_CLKIN1_100_150)
+  Physical resource: mypll_inst/plle2_adv_inst/CLKIN1
+  Logical resource: mypll_inst/plle2_adv_inst/CLKIN1
+  Location pin: PLLE2_ADV_X0Y0.CLKIN1
+  Clock network: mypll_inst/clkin1
+--------------------------------------------------------------------------------
+Slack: 6.000ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 10.000ns
+  High pulse: 5.000ns
+  High pulse limit: 2.000ns (Tmmcmpw_CLKIN1_100_150)
+  Physical resource: mypll_inst/plle2_adv_inst/CLKIN1
+  Logical resource: mypll_inst/plle2_adv_inst/CLKIN1
+  Location pin: PLLE2_ADV_X0Y0.CLKIN1
+  Clock network: mypll_inst/clkin1
+--------------------------------------------------------------------------------
+Slack: 8.751ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 1.249ns (800.641MHz) (Tpllper_CLKIN(Finmax))
+  Physical resource: mypll_inst/plle2_adv_inst/CLKIN1
+  Logical resource: mypll_inst/plle2_adv_inst/CLKIN1
+  Location pin: PLLE2_ADV_X0Y0.CLKIN1
+  Clock network: mypll_inst/clkin1
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_mypll_inst_clkout0 = PERIOD TIMEGRP "mypll_inst_clkout0" 
+TS_Clk0 / 0.5 HIGH         50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 1888169 paths analyzed, 4118 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is  13.669ns.
+--------------------------------------------------------------------------------
+
+Paths for end point medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_min_6 (SLICE_X47Y22.CX), 6327 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     6.331ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               medium_filter_inst/dram_inst3/Mram_ram (RAM)
+  Destination:          medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_min_6 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      13.305ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.275ns (1.339 - 1.614)
+  Source Clock:         clk50m rising at 0.000ns
+  Destination Clock:    clk50m rising at 20.000ns
+  Clock Uncertainty:    0.089ns
+
+  Clock Uncertainty:          0.089ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.162ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: medium_filter_inst/dram_inst3/Mram_ram to medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_min_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB18_X3Y16.DO19    Trcko_DOB             2.454   medium_filter_inst/dram_inst3/Mram_ram
+                                                       medium_filter_inst/dram_inst3/Mram_ram
+    SLICE_X59Y40.B2      net (fanout=3)        1.355   medium_filter_inst/ram3_data<3>
+    SLICE_X59Y40.B       Tilo                  0.124   medium_filter_inst/Mmux_data02
+                                                       medium_filter_inst/Mmux_data041
+    SLICE_X59Y40.A4      net (fanout=1)        0.433   medium_filter_inst/Mmux_data04
+    SLICE_X59Y40.A       Tilo                  0.124   medium_filter_inst/Mmux_data02
+                                                       medium_filter_inst/Mmux_data042
+    SLICE_X57Y39.A2      net (fanout=49)       1.311   medium_filter_inst/data0<3>
+    SLICE_X57Y39.A       Tilo                  0.124   medium_filter_inst/data0<2>
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/data10[7]_data00[7]_LessThan_18_o1_SW2
+    SLICE_X56Y35.A2      net (fanout=1)        1.257   N247
+    SLICE_X56Y35.A       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/data10[7]_data00[7]_LessThan_18_o4
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/data10[7]_data00[7]_LessThan_18_o1
+    SLICE_X56Y35.B5      net (fanout=3)        0.290   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/data10[7]_data00[7]_LessThan_18_o2
+    SLICE_X56Y35.B       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/data10[7]_data00[7]_LessThan_18_o4
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/data10[7]_data00[7]_LessThan_18_o21
+    SLICE_X72Y40.B1      net (fanout=56)       1.626   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/data10[7]_data00[7]_LessThan_18_o
+    SLICE_X72Y40.B       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/med_med<7>
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/Mmux__n029331
+    SLICE_X46Y22.D2      net (fanout=13)       2.355   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/Mmux__n02933
+    SLICE_X46Y22.D       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_max<6>
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/_n0293<3>31
+    SLICE_X46Y22.C1      net (fanout=7)        0.981   medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/_n0293<3>3
+    SLICE_X46Y22.C       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_max<6>
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/_n0329<6>1
+    SLICE_X47Y22.CX      net (fanout=1)        0.190   medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/_n0329<6>
+    SLICE_X47Y22.CLK     Tdick                 0.061   medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_min<6>
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_min_6
+    -------------------------------------------------  ---------------------------
+    Total                                     13.305ns (3.507ns logic, 9.798ns route)
+                                                       (26.4% logic, 73.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     6.430ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               medium_filter_inst/dram_inst0/Mram_ram (RAM)
+  Destination:          medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_min_6 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      13.205ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.276ns (1.339 - 1.615)
+  Source Clock:         clk50m rising at 0.000ns
+  Destination Clock:    clk50m rising at 20.000ns
+  Clock Uncertainty:    0.089ns
+
+  Clock Uncertainty:          0.089ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.162ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: medium_filter_inst/dram_inst0/Mram_ram to medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_min_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB18_X3Y18.DO19    Trcko_DOB             2.454   medium_filter_inst/dram_inst0/Mram_ram
+                                                       medium_filter_inst/dram_inst0/Mram_ram
+    SLICE_X59Y40.B1      net (fanout=4)        1.255   medium_filter_inst/ram0_data<3>
+    SLICE_X59Y40.B       Tilo                  0.124   medium_filter_inst/Mmux_data02
+                                                       medium_filter_inst/Mmux_data041
+    SLICE_X59Y40.A4      net (fanout=1)        0.433   medium_filter_inst/Mmux_data04
+    SLICE_X59Y40.A       Tilo                  0.124   medium_filter_inst/Mmux_data02
+                                                       medium_filter_inst/Mmux_data042
+    SLICE_X57Y39.A2      net (fanout=49)       1.311   medium_filter_inst/data0<3>
+    SLICE_X57Y39.A       Tilo                  0.124   medium_filter_inst/data0<2>
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/data10[7]_data00[7]_LessThan_18_o1_SW2
+    SLICE_X56Y35.A2      net (fanout=1)        1.257   N247
+    SLICE_X56Y35.A       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/data10[7]_data00[7]_LessThan_18_o4
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/data10[7]_data00[7]_LessThan_18_o1
+    SLICE_X56Y35.B5      net (fanout=3)        0.290   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/data10[7]_data00[7]_LessThan_18_o2
+    SLICE_X56Y35.B       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/data10[7]_data00[7]_LessThan_18_o4
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/data10[7]_data00[7]_LessThan_18_o21
+    SLICE_X72Y40.B1      net (fanout=56)       1.626   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/data10[7]_data00[7]_LessThan_18_o
+    SLICE_X72Y40.B       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/med_med<7>
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/Mmux__n029331
+    SLICE_X46Y22.D2      net (fanout=13)       2.355   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/Mmux__n02933
+    SLICE_X46Y22.D       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_max<6>
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/_n0293<3>31
+    SLICE_X46Y22.C1      net (fanout=7)        0.981   medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/_n0293<3>3
+    SLICE_X46Y22.C       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_max<6>
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/_n0329<6>1
+    SLICE_X47Y22.CX      net (fanout=1)        0.190   medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/_n0329<6>
+    SLICE_X47Y22.CLK     Tdick                 0.061   medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_min<6>
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_min_6
+    -------------------------------------------------  ---------------------------
+    Total                                     13.205ns (3.507ns logic, 9.698ns route)
+                                                       (26.6% logic, 73.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     6.466ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               medium_filter_inst/dram_inst2/Mram_ram (RAM)
+  Destination:          medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_min_6 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      13.170ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.275ns (1.339 - 1.614)
+  Source Clock:         clk50m rising at 0.000ns
+  Destination Clock:    clk50m rising at 20.000ns
+  Clock Uncertainty:    0.089ns
+
+  Clock Uncertainty:          0.089ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.162ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: medium_filter_inst/dram_inst2/Mram_ram to medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_min_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB18_X3Y17.DOBDO2  Trcko_DOB             2.454   medium_filter_inst/dram_inst2/Mram_ram
+                                                       medium_filter_inst/dram_inst2/Mram_ram
+    SLICE_X57Y40.A2      net (fanout=3)        1.233   medium_filter_inst/ram2_data<2>
+    SLICE_X57Y40.A       Tilo                  0.124   medium_filter_inst/Mmux_data03
+                                                       medium_filter_inst/Mmux_data031
+    SLICE_X57Y39.B2      net (fanout=1)        0.796   medium_filter_inst/Mmux_data03
+    SLICE_X57Y39.B       Tilo                  0.124   medium_filter_inst/data0<2>
+                                                       medium_filter_inst/Mmux_data032
+    SLICE_X57Y39.A1      net (fanout=39)       0.935   medium_filter_inst/data0<2>
+    SLICE_X57Y39.A       Tilo                  0.124   medium_filter_inst/data0<2>
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/data10[7]_data00[7]_LessThan_18_o1_SW2
+    SLICE_X56Y35.A2      net (fanout=1)        1.257   N247
+    SLICE_X56Y35.A       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/data10[7]_data00[7]_LessThan_18_o4
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/data10[7]_data00[7]_LessThan_18_o1
+    SLICE_X56Y35.B5      net (fanout=3)        0.290   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/data10[7]_data00[7]_LessThan_18_o2
+    SLICE_X56Y35.B       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/data10[7]_data00[7]_LessThan_18_o4
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/data10[7]_data00[7]_LessThan_18_o21
+    SLICE_X72Y40.B1      net (fanout=56)       1.626   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/data10[7]_data00[7]_LessThan_18_o
+    SLICE_X72Y40.B       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/med_med<7>
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/Mmux__n029331
+    SLICE_X46Y22.D2      net (fanout=13)       2.355   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/Mmux__n02933
+    SLICE_X46Y22.D       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_max<6>
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/_n0293<3>31
+    SLICE_X46Y22.C1      net (fanout=7)        0.981   medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/_n0293<3>3
+    SLICE_X46Y22.C       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_max<6>
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/_n0329<6>1
+    SLICE_X47Y22.CX      net (fanout=1)        0.190   medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/_n0329<6>
+    SLICE_X47Y22.CLK     Tdick                 0.061   medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_min<6>
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_min_6
+    -------------------------------------------------  ---------------------------
+    Total                                     13.170ns (3.507ns logic, 9.663ns route)
+                                                       (26.6% logic, 73.4% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/med_min_1 (SLICE_X74Y41.BX), 6327 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     6.419ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               medium_filter_inst/dram_inst2/Mram_ram (RAM)
+  Destination:          medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/med_min_1 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      13.396ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.096ns (0.834 - 0.930)
+  Source Clock:         clk50m rising at 0.000ns
+  Destination Clock:    clk50m rising at 20.000ns
+  Clock Uncertainty:    0.089ns
+
+  Clock Uncertainty:          0.089ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.162ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: medium_filter_inst/dram_inst2/Mram_ram to medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/med_min_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB18_X3Y17.DOBDO3  Trcko_DOB             2.454   medium_filter_inst/dram_inst2/Mram_ram
+                                                       medium_filter_inst/dram_inst2/Mram_ram
+    SLICE_X58Y41.A2      net (fanout=3)        1.378   medium_filter_inst/ram2_data<3>
+    SLICE_X58Y41.A       Tilo                  0.124   medium_filter_inst/Mmux_data24
+                                                       medium_filter_inst/Mmux_data241
+    SLICE_X58Y39.D1      net (fanout=1)        0.834   medium_filter_inst/Mmux_data24
+    SLICE_X58Y39.D       Tilo                  0.124   medium_filter_inst/data2_r1<3>
+                                                       medium_filter_inst/Mmux_data242
+    SLICE_X63Y36.C3      net (fanout=51)       0.916   medium_filter_inst/data2<3>
+    SLICE_X63Y36.C       Tilo                  0.124   N67
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/data20[7]_data10[7]_LessThan_8_o1_SW1
+    SLICE_X62Y36.A3      net (fanout=1)        0.729   N67
+    SLICE_X62Y36.A       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/n00481
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/data20[7]_data10[7]_LessThan_8_o1
+    SLICE_X67Y32.B3      net (fanout=4)        1.108   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/data20[7]_data10[7]_LessThan_8_o2
+    SLICE_X67Y32.B       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/n0048
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/n004821
+    SLICE_X49Y36.A3      net (fanout=25)       1.564   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/n0048
+    SLICE_X49Y36.A       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst3/_n0328_inv6
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/_n0328_inv21
+    SLICE_X75Y41.B1      net (fanout=20)       1.976   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/_n0328_inv2
+    SLICE_X75Y41.B       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/med_min<6>
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/_n0293<3>21
+    SLICE_X77Y41.B1      net (fanout=7)        0.876   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/_n0293<3>2
+    SLICE_X77Y41.B       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/med_max<3>
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/_n0329<1>1
+    SLICE_X74Y41.BX      net (fanout=1)        0.488   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/_n0329<1>
+    SLICE_X74Y41.CLK     Tdick                 0.081   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/med_min<3>
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/med_min_1
+    -------------------------------------------------  ---------------------------
+    Total                                     13.396ns (3.527ns logic, 9.869ns route)
+                                                       (26.3% logic, 73.7% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     6.498ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               medium_filter_inst/dram_inst0/Mram_ram (RAM)
+  Destination:          medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/med_min_1 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      13.316ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.097ns (0.834 - 0.931)
+  Source Clock:         clk50m rising at 0.000ns
+  Destination Clock:    clk50m rising at 20.000ns
+  Clock Uncertainty:    0.089ns
+
+  Clock Uncertainty:          0.089ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.162ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: medium_filter_inst/dram_inst0/Mram_ram to medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/med_min_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB18_X3Y18.DO19    Trcko_DOB             2.454   medium_filter_inst/dram_inst0/Mram_ram
+                                                       medium_filter_inst/dram_inst0/Mram_ram
+    SLICE_X58Y41.A3      net (fanout=4)        1.298   medium_filter_inst/ram0_data<3>
+    SLICE_X58Y41.A       Tilo                  0.124   medium_filter_inst/Mmux_data24
+                                                       medium_filter_inst/Mmux_data241
+    SLICE_X58Y39.D1      net (fanout=1)        0.834   medium_filter_inst/Mmux_data24
+    SLICE_X58Y39.D       Tilo                  0.124   medium_filter_inst/data2_r1<3>
+                                                       medium_filter_inst/Mmux_data242
+    SLICE_X63Y36.C3      net (fanout=51)       0.916   medium_filter_inst/data2<3>
+    SLICE_X63Y36.C       Tilo                  0.124   N67
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/data20[7]_data10[7]_LessThan_8_o1_SW1
+    SLICE_X62Y36.A3      net (fanout=1)        0.729   N67
+    SLICE_X62Y36.A       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/n00481
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/data20[7]_data10[7]_LessThan_8_o1
+    SLICE_X67Y32.B3      net (fanout=4)        1.108   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/data20[7]_data10[7]_LessThan_8_o2
+    SLICE_X67Y32.B       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/n0048
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/n004821
+    SLICE_X49Y36.A3      net (fanout=25)       1.564   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/n0048
+    SLICE_X49Y36.A       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst3/_n0328_inv6
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/_n0328_inv21
+    SLICE_X75Y41.B1      net (fanout=20)       1.976   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/_n0328_inv2
+    SLICE_X75Y41.B       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/med_min<6>
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/_n0293<3>21
+    SLICE_X77Y41.B1      net (fanout=7)        0.876   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/_n0293<3>2
+    SLICE_X77Y41.B       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/med_max<3>
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/_n0329<1>1
+    SLICE_X74Y41.BX      net (fanout=1)        0.488   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/_n0329<1>
+    SLICE_X74Y41.CLK     Tdick                 0.081   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/med_min<3>
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/med_min_1
+    -------------------------------------------------  ---------------------------
+    Total                                     13.316ns (3.527ns logic, 9.789ns route)
+                                                       (26.5% logic, 73.5% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     6.552ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               medium_filter_inst/dram_inst0/Mram_ram (RAM)
+  Destination:          medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/med_min_1 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      13.262ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.097ns (0.834 - 0.931)
+  Source Clock:         clk50m rising at 0.000ns
+  Destination Clock:    clk50m rising at 20.000ns
+  Clock Uncertainty:    0.089ns
+
+  Clock Uncertainty:          0.089ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.162ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: medium_filter_inst/dram_inst0/Mram_ram to medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/med_min_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB18_X3Y18.DO20    Trcko_DOB             2.454   medium_filter_inst/dram_inst0/Mram_ram
+                                                       medium_filter_inst/dram_inst0/Mram_ram
+    SLICE_X61Y39.B1      net (fanout=4)        1.547   medium_filter_inst/ram0_data<4>
+    SLICE_X61Y39.B       Tilo                  0.124   medium_filter_inst/data1_r1<5>
+                                                       medium_filter_inst/Mmux_data151
+    SLICE_X61Y39.A4      net (fanout=1)        0.433   medium_filter_inst/Mmux_data15
+    SLICE_X61Y39.A       Tilo                  0.124   medium_filter_inst/data1_r1<5>
+                                                       medium_filter_inst/Mmux_data152
+    SLICE_X63Y36.C1      net (fanout=52)       1.014   medium_filter_inst/data1<4>
+    SLICE_X63Y36.C       Tilo                  0.124   N67
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/data20[7]_data10[7]_LessThan_8_o1_SW1
+    SLICE_X62Y36.A3      net (fanout=1)        0.729   N67
+    SLICE_X62Y36.A       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/n00481
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/data20[7]_data10[7]_LessThan_8_o1
+    SLICE_X67Y32.B3      net (fanout=4)        1.108   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/data20[7]_data10[7]_LessThan_8_o2
+    SLICE_X67Y32.B       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/n0048
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/n004821
+    SLICE_X49Y36.A3      net (fanout=25)       1.564   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/n0048
+    SLICE_X49Y36.A       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst3/_n0328_inv6
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/_n0328_inv21
+    SLICE_X75Y41.B1      net (fanout=20)       1.976   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/_n0328_inv2
+    SLICE_X75Y41.B       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/med_min<6>
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/_n0293<3>21
+    SLICE_X77Y41.B1      net (fanout=7)        0.876   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/_n0293<3>2
+    SLICE_X77Y41.B       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/med_max<3>
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/_n0329<1>1
+    SLICE_X74Y41.BX      net (fanout=1)        0.488   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/_n0329<1>
+    SLICE_X74Y41.CLK     Tdick                 0.081   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/med_min<3>
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/med_min_1
+    -------------------------------------------------  ---------------------------
+    Total                                     13.262ns (3.527ns logic, 9.735ns route)
+                                                       (26.6% logic, 73.4% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/med_min_6 (SLICE_X75Y41.CX), 6327 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     6.437ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               medium_filter_inst/dram_inst2/Mram_ram (RAM)
+  Destination:          medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/med_min_6 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      13.378ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.096ns (0.834 - 0.930)
+  Source Clock:         clk50m rising at 0.000ns
+  Destination Clock:    clk50m rising at 20.000ns
+  Clock Uncertainty:    0.089ns
+
+  Clock Uncertainty:          0.089ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.162ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: medium_filter_inst/dram_inst2/Mram_ram to medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/med_min_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB18_X3Y17.DOBDO3  Trcko_DOB             2.454   medium_filter_inst/dram_inst2/Mram_ram
+                                                       medium_filter_inst/dram_inst2/Mram_ram
+    SLICE_X58Y41.A2      net (fanout=3)        1.378   medium_filter_inst/ram2_data<3>
+    SLICE_X58Y41.A       Tilo                  0.124   medium_filter_inst/Mmux_data24
+                                                       medium_filter_inst/Mmux_data241
+    SLICE_X58Y39.D1      net (fanout=1)        0.834   medium_filter_inst/Mmux_data24
+    SLICE_X58Y39.D       Tilo                  0.124   medium_filter_inst/data2_r1<3>
+                                                       medium_filter_inst/Mmux_data242
+    SLICE_X63Y36.C3      net (fanout=51)       0.916   medium_filter_inst/data2<3>
+    SLICE_X63Y36.C       Tilo                  0.124   N67
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/data20[7]_data10[7]_LessThan_8_o1_SW1
+    SLICE_X62Y36.A3      net (fanout=1)        0.729   N67
+    SLICE_X62Y36.A       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/n00481
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/data20[7]_data10[7]_LessThan_8_o1
+    SLICE_X67Y32.B3      net (fanout=4)        1.108   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/data20[7]_data10[7]_LessThan_8_o2
+    SLICE_X67Y32.B       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/n0048
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/n004821
+    SLICE_X49Y36.A3      net (fanout=25)       1.564   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/n0048
+    SLICE_X49Y36.A       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst3/_n0328_inv6
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/_n0328_inv21
+    SLICE_X75Y41.B1      net (fanout=20)       1.976   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/_n0328_inv2
+    SLICE_X75Y41.B       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/med_min<6>
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/_n0293<3>21
+    SLICE_X76Y41.C2      net (fanout=7)        0.872   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/_n0293<3>2
+    SLICE_X76Y41.C       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/med_max<6>
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/_n0329<6>1
+    SLICE_X75Y41.CX      net (fanout=1)        0.494   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/_n0329<6>
+    SLICE_X75Y41.CLK     Tdick                 0.061   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/med_min<6>
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/med_min_6
+    -------------------------------------------------  ---------------------------
+    Total                                     13.378ns (3.507ns logic, 9.871ns route)
+                                                       (26.2% logic, 73.8% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     6.462ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               medium_filter_inst/dram_inst1/Mram_ram (RAM)
+  Destination:          medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/med_min_6 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      13.352ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.097ns (0.834 - 0.931)
+  Source Clock:         clk50m rising at 0.000ns
+  Destination Clock:    clk50m rising at 20.000ns
+  Clock Uncertainty:    0.089ns
+
+  Clock Uncertainty:          0.089ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.162ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: medium_filter_inst/dram_inst1/Mram_ram to medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/med_min_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB18_X3Y19.DOBDO2  Trcko_DOB             2.454   medium_filter_inst/dram_inst1/Mram_ram
+                                                       medium_filter_inst/dram_inst1/Mram_ram
+    SLICE_X58Y39.B2      net (fanout=3)        1.433   medium_filter_inst/ram1_data<2>
+    SLICE_X58Y39.B       Tilo                  0.124   medium_filter_inst/data2_r1<3>
+                                                       medium_filter_inst/Mmux_data231
+    SLICE_X58Y39.A4      net (fanout=1)        0.452   medium_filter_inst/Mmux_data23
+    SLICE_X58Y39.A       Tilo                  0.124   medium_filter_inst/data2_r1<3>
+                                                       medium_filter_inst/Mmux_data232
+    SLICE_X55Y35.A1      net (fanout=36)       1.431   medium_filter_inst/data2<2>
+    SLICE_X55Y35.A       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/n00381
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/n00381
+    SLICE_X54Y35.CX      net (fanout=1)        0.330   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/n00381
+    SLICE_X54Y35.CMUX    Tcxc                  0.488   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/data20[7]_data00[7]_LessThan_14_o2
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/data20[7]_data00[7]_LessThan_14_o1
+    SLICE_X58Y32.B1      net (fanout=4)        1.139   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/data20[7]_data00[7]_LessThan_14_o2
+    SLICE_X58Y32.B       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/n0038
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/n003821
+    SLICE_X51Y37.A2      net (fanout=26)       1.353   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/n0038
+    SLICE_X51Y37.A       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst3/_n0293<3>1
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/_n0328_inv11
+    SLICE_X75Y41.C1      net (fanout=12)       1.785   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/_n0328_inv1
+    SLICE_X75Y41.C       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/med_min<6>
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/_n0293<3>11
+    SLICE_X76Y41.C1      net (fanout=7)        1.064   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/_n0293<3>1
+    SLICE_X76Y41.C       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/med_max<6>
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/_n0329<6>1
+    SLICE_X75Y41.CX      net (fanout=1)        0.494   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/_n0329<6>
+    SLICE_X75Y41.CLK     Tdick                 0.061   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/med_min<6>
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/med_min_6
+    -------------------------------------------------  ---------------------------
+    Total                                     13.352ns (3.871ns logic, 9.481ns route)
+                                                       (29.0% logic, 71.0% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     6.516ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               medium_filter_inst/dram_inst0/Mram_ram (RAM)
+  Destination:          medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/med_min_6 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      13.298ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.097ns (0.834 - 0.931)
+  Source Clock:         clk50m rising at 0.000ns
+  Destination Clock:    clk50m rising at 20.000ns
+  Clock Uncertainty:    0.089ns
+
+  Clock Uncertainty:          0.089ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.162ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: medium_filter_inst/dram_inst0/Mram_ram to medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/med_min_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB18_X3Y18.DO19    Trcko_DOB             2.454   medium_filter_inst/dram_inst0/Mram_ram
+                                                       medium_filter_inst/dram_inst0/Mram_ram
+    SLICE_X58Y41.A3      net (fanout=4)        1.298   medium_filter_inst/ram0_data<3>
+    SLICE_X58Y41.A       Tilo                  0.124   medium_filter_inst/Mmux_data24
+                                                       medium_filter_inst/Mmux_data241
+    SLICE_X58Y39.D1      net (fanout=1)        0.834   medium_filter_inst/Mmux_data24
+    SLICE_X58Y39.D       Tilo                  0.124   medium_filter_inst/data2_r1<3>
+                                                       medium_filter_inst/Mmux_data242
+    SLICE_X63Y36.C3      net (fanout=51)       0.916   medium_filter_inst/data2<3>
+    SLICE_X63Y36.C       Tilo                  0.124   N67
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/data20[7]_data10[7]_LessThan_8_o1_SW1
+    SLICE_X62Y36.A3      net (fanout=1)        0.729   N67
+    SLICE_X62Y36.A       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/n00481
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/data20[7]_data10[7]_LessThan_8_o1
+    SLICE_X67Y32.B3      net (fanout=4)        1.108   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/data20[7]_data10[7]_LessThan_8_o2
+    SLICE_X67Y32.B       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/n0048
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/n004821
+    SLICE_X49Y36.A3      net (fanout=25)       1.564   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/n0048
+    SLICE_X49Y36.A       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst3/_n0328_inv6
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/_n0328_inv21
+    SLICE_X75Y41.B1      net (fanout=20)       1.976   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/_n0328_inv2
+    SLICE_X75Y41.B       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/med_min<6>
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/_n0293<3>21
+    SLICE_X76Y41.C2      net (fanout=7)        0.872   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/_n0293<3>2
+    SLICE_X76Y41.C       Tilo                  0.124   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/med_max<6>
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/_n0329<6>1
+    SLICE_X75Y41.CX      net (fanout=1)        0.494   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/_n0329<6>
+    SLICE_X75Y41.CLK     Tdick                 0.061   medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/med_min<6>
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst0/med_min_6
+    -------------------------------------------------  ---------------------------
+    Total                                     13.298ns (3.507ns logic, 9.791ns route)
+                                                       (26.4% logic, 73.6% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_mypll_inst_clkout0 = PERIOD TIMEGRP "mypll_inst_clkout0" TS_Clk0 / 0.5 HIGH
+        50%;
+--------------------------------------------------------------------------------
+
+Paths for end point medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_med_0 (SLICE_X51Y22.A6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.003ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_min_0 (FF)
+  Destination:          medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_med_0 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.259ns (Levels of Logic = 1)
+  Clock Path Skew:      0.256ns (0.755 - 0.499)
+  Source Clock:         clk50m rising at 20.000ns
+  Destination Clock:    clk50m rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_min_0 to medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_med_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X49Y22.AQ      Tcko                  0.141   medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_min<3>
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_min_0
+    SLICE_X51Y22.A6      net (fanout=4)        0.164   medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_min<0>
+    SLICE_X51Y22.CLK     Tah         (-Th)     0.046   medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_med<3>
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/Mmux_data12[7]_data22[7]_mux_161_OUT1
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_med_0
+    -------------------------------------------------  ---------------------------
+    Total                                      0.259ns (0.095ns logic, 0.164ns route)
+                                                       (36.7% logic, 63.3% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_med_3 (SLICE_X51Y22.D6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.012ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_min_3 (FF)
+  Destination:          medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_med_3 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.268ns (Levels of Logic = 1)
+  Clock Path Skew:      0.256ns (0.755 - 0.499)
+  Source Clock:         clk50m rising at 20.000ns
+  Destination Clock:    clk50m rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_min_3 to medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_med_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X49Y22.DQ      Tcko                  0.141   medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_min<3>
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_min_3
+    SLICE_X51Y22.D6      net (fanout=4)        0.174   medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_min<3>
+    SLICE_X51Y22.CLK     Tah         (-Th)     0.047   medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_med<3>
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/Mmux_data12[7]_data22[7]_mux_161_OUT4
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_med_3
+    -------------------------------------------------  ---------------------------
+    Total                                      0.268ns (0.094ns logic, 0.174ns route)
+                                                       (35.1% logic, 64.9% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_med_3 (SLICE_X51Y22.D5), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.018ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_max_3 (FF)
+  Destination:          medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_med_3 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.274ns (Levels of Logic = 1)
+  Clock Path Skew:      0.256ns (0.755 - 0.499)
+  Source Clock:         clk50m rising at 20.000ns
+  Destination Clock:    clk50m rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_max_3 to medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_med_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X48Y22.DQ      Tcko                  0.141   medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_max<3>
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_max_3
+    SLICE_X51Y22.D5      net (fanout=6)        0.180   medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_max<3>
+    SLICE_X51Y22.CLK     Tah         (-Th)     0.047   medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_med<3>
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/Mmux_data12[7]_data22[7]_mux_161_OUT4
+                                                       medium_filter_inst/get_pipe4_med_inst/get_medium_inst1/med_med_3
+    -------------------------------------------------  ---------------------------
+    Total                                      0.274ns (0.094ns logic, 0.180ns route)
+                                                       (34.3% logic, 65.7% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_mypll_inst_clkout0 = PERIOD TIMEGRP "mypll_inst_clkout0" TS_Clk0 / 0.5 HIGH
+        50%;
+--------------------------------------------------------------------------------
+Slack: 17.108ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 2.892ns (345.781MHz) (Trper_CLKA)
+  Physical resource: bmp_rom_inst/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[10].ram.r/v6_init.ram/NO_BMM_INFO.SP.CASCADED_PRIM36.ram_T/CLKARDCLKL
+  Logical resource: bmp_rom_inst/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[10].ram.r/v6_init.ram/NO_BMM_INFO.SP.CASCADED_PRIM36.ram_T/CLKARDCLKL
+  Location pin: RAMB36_X4Y18.CLKARDCLKL
+  Clock network: clk50m
+--------------------------------------------------------------------------------
+Slack: 17.108ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 2.892ns (345.781MHz) (Trper_CLK_WF_NC(FMAX_CAS_WF_NC))
+  Physical resource: bmp_rom_inst/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[10].ram.r/v6_init.ram/NO_BMM_INFO.SP.CASCADED_PRIM36.ram_T/CLKARDCLKU
+  Logical resource: bmp_rom_inst/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[10].ram.r/v6_init.ram/NO_BMM_INFO.SP.CASCADED_PRIM36.ram_T/CLKARDCLKU
+  Location pin: RAMB36_X4Y18.CLKARDCLKU
+  Clock network: clk50m
+--------------------------------------------------------------------------------
+Slack: 17.108ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 2.892ns (345.781MHz) (Trper_CLKA)
+  Physical resource: bmp_rom_inst/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[10].ram.r/v6_init.ram/NO_BMM_INFO.SP.CASCADED_PRIM36.ram_B/CLKARDCLKL
+  Logical resource: bmp_rom_inst/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[10].ram.r/v6_init.ram/NO_BMM_INFO.SP.CASCADED_PRIM36.ram_B/CLKARDCLKL
+  Location pin: RAMB36_X4Y17.CLKARDCLKL
+  Clock network: clk50m
+--------------------------------------------------------------------------------
+
+
+Derived Constraint Report
+Derived Constraints for TS_Clk0
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|                               |   Period    |       Actual Period       |      Timing Errors        |      Paths Analyzed       |
+|           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
+|                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|TS_Clk0                        |     10.000ns|      4.000ns|      6.835ns|            0|            0|            0|      1888169|
+| TS_mypll_inst_clkout0         |     20.000ns|     13.669ns|          N/A|            0|            0|      1888169|            0|
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |   13.669|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 1888169 paths, 0 nets, and 8989 connections
+
+Design statistics:
+   Minimum period:  13.669ns{1}   (Maximum frequency:  73.158MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Tue May 05 23:00:21 2015 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 635 MB
+
+
+

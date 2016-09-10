@@ -1,0 +1,4 @@
+vhdl work "get_medium.vhd"
+vhdl work "get_pipe4_med.vhd"
+vhdl work "dram.vhd"
+vhdl work "medium_filter.vhd"

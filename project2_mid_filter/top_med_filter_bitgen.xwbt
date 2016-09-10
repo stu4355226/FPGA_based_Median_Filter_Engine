@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=E:\med_filter\top_med_filter.ncd
+OUTFILE=E:\med_filter\top_med_filter.bit
+FAMILY=Zynq
+PART=xc7z020-1clg484
+WORKINGDIR=E:\med_filter
+LICENSE=WebPack
+USER_INFO=__0_0_0

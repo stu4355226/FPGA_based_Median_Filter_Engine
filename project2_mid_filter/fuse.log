@@ -1,0 +1,27 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/Users/LEE/Desktop/TEST/tb_med_filter_isim_beh.exe -prj C:/Users/LEE/Desktop/TEST/tb_med_filter_beh.prj work.tb_med_filter 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "C:/Users/LEE/Desktop/TEST/get_medium.vhd" into library work
+Parsing VHDL file "C:/Users/LEE/Desktop/TEST/get_pipe4_med.vhd" into library work
+Parsing VHDL file "C:/Users/LEE/Desktop/TEST/dram.vhd" into library work
+Parsing VHDL file "C:/Users/LEE/Desktop/TEST/medium_filter.vhd" into library work
+Parsing VHDL file "C:/Users/LEE/Desktop/TEST/tb_med_filter.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling architecture rtl of entity dram [dram_default]
+Compiling architecture rtl of entity get_medium [get_medium_default]
+Compiling architecture rtl of entity get_pipe4_med [get_pipe4_med_default]
+Compiling architecture rtl of entity medium_filter [\medium_filter(4,3,10,10)\]
+Compiling architecture medium_filter_arch of entity tb_med_filter
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 13 VHDL Units
+Built simulation executable C:/Users/LEE/Desktop/TEST/tb_med_filter_isim_beh.exe
+Fuse Memory Usage: 34588 KB
+Fuse CPU Usage: 717 ms
