@@ -26,10 +26,13 @@ Diagram and concept
 ![Diagram](/images/diagram.jpg)   
     
 THis project is using ping-pong and pipeline on the data processing.    
-Pipeline is used for buffering received image data. In the project it has four Dual Rams,    
+ping-pong is used for buffering received image data. In the project it has four Dual Rams,    
 In the execution, every clock cycle will has oen ram writing new data, and other 3 rams reading data then compute.   
 For example: When RAM0 is receving new data, RAM1,2,3 will poop out the buttered data.
 wr_ram signal controls RAM writing funtion.    
 If wr_ram is "0001", rd_ram is "1110", that means RAM0 is reciving data, RAM3,2,1 are pooping out data.
-When the operation is done, wr_row_done will set to 1,
+When the operation is done, wr_row_done will set to 1.   
+   
+Pipeline is used to quickly compute data in thie project. get_medium.vhd computes 3x3 array data and find the meduim value.   
+However, it takes 4 cycles to finish this operation, here I use 4 get_medium to process the data.
  
