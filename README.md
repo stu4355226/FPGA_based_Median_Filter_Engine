@@ -76,7 +76,7 @@ It’s the result, then we can cleanly see we the first two matrix is output pro
 
 ![7](/images/7.jpg)     
 
-Rederence   
+Reference   
 -------------
 1. Optimized Median Filter Implementation on FPGA IncludingSoft Processor. S.S.Tavse1, P.M.Jadhav2, M.R.Ingle3, August 2012.     
 2. Energy-Efficient Median Filter on FPGA. Andrea Sanny, Viktor K. Prasanna.     
